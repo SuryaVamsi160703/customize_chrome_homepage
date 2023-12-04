@@ -20,25 +20,25 @@
 }
 
 body {
-  background-color: rgb(var(--body-color));
-  margin: 0px;
-}
+      background-color: rgb(var(--body-color));
+      margin: 0px;
+    }
 
-body::-webkit-scrollbar {
-  width: 4px;
-}
+    body::-webkit-scrollbar {
+      width: 4px;
+    }
 
-body::-webkit-scrollbar-track {
-  background-color: rgb(var(--theme-background));
-}
+    body::-webkit-scrollbar-track {
+      background-color: rgb(var(--theme-background));
+    }
 
-body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-}
+    body::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
 h1, h2, h3, h4, input, select, button, span, a, p {
   color: rgb(var(--font-color));
@@ -149,21 +149,21 @@ button, a, input {
 
 #search-container {
   display: flex;
-  gap: 0.2rem;
-  margin-top: 0.2rem;  
+  width: 80%;
+  margin: 0.2rem auto;
 }
 
 #search-input-container > input,
 #search-container > button {
-  background-color: rgb(255 255 255 / 10%);
-  color: rgb(255 255 255 / 80%);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1rem;
   border: none;
 }
 
 #search-input-container:has(input:focus),
 #search-container > button:focus {
-  background-color: rgb(255 255 255 / 16%);
+  background-color: rgba(255, 255, 255, 0.16);
 }
 
 #search-container > button {
@@ -179,8 +179,9 @@ button, a, input {
 #search-input-container {
   display: flex;
   align-items: center;
+  width: 80%;
   gap: 0.75rem;
-  background-color: rgb(255 255 255 / 10%);
+  background-color: rgba(255, 255, 255, 0.1);
   padding-left: 1rem;
   border-radius: 0.2rem;
   border-bottom-left-radius: 0.5rem;
@@ -194,9 +195,18 @@ button, a, input {
   width: 100%;
   height: 3.25rem;
   background-color: transparent;
-  padding: 1rem;  
-  padding-left: 0rem;
+  padding: 1rem;
+  padding-left: 0;
 }
+
+#mic-button {
+  width: 10%;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
 
 #apps-container {
   display: grid;
@@ -1012,60 +1022,64 @@ li.dropdown-list-item {
   }
 }
 
-h3{
-font-family: 'Pacifico', cursive;
-font-weight: 100;
-margin: 0px;
-position: absolute;
+a {
+  display: inline-block;
+  text-decoration: none; /* Add this line to remove the underline */
+}
+
+h3 {
+  font-family: 'Pacifico', cursive;
+  font-weight: 100;
+  margin: 0px;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% ,-50%);
+  transform: translate(-50%, -50%);
   color: #fff;
   font-size: 30px;
   text-shadow: 0px 0px 20px #00aad4;
-  -webkit-animation: blinkH1 5s  infinite;
-  animation: blinkH1 5s  infinite;
+  animation: blinkH1 5s infinite;
 }
 
-h3:after{
-content: attr(data-text);
-position: absolute;
-top: 0;
-left: 0;
-color: #00aad4;
+h3:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00aad4;
   z-index: -1;
   filter: blur(15px);
-  -webkit-animation: blinkH1After 5s  infinite;
-  animation: blinkH1After 5s  infinite;
+  animation: blinkH1After 5s infinite;
 }
 
-h3:before{
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: #00aad4;
-z-index: -2;
-opacity: 0.7;
+h3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00aad4;
+  z-index: -2;
+  opacity: 0.7;
   filter: blur(50px);
-  -webkit-animation: blinkH1Before 5s  infinite;
-  animation: blinkH1Before 5s  infinite;
+  animation: blinkH1Before 5s infinite;
 }
 
-h3.txt-by{
-z-index: 2;
-font-size: 30px;
-top: calc(50% - 55px);
+h3.txt-by {
+  z-index: 2;
+  font-size: 30px;
+  top: calc(50% - 55px);
 }
 
-h3.txt-ne{
-top: calc(50% + 5px);
-text-align: center;
+h3.txt-ne {
+  top: calc(50% + 5px);
+  text-align: center;
   line-height: 1;
   margin-top: 15px;
 }
+
+
 
 .searchContainer {
   display: flex;
@@ -1080,19 +1094,17 @@ text-align: center;
   box-sizing: border-box;
 }
 </style>
-</head>
 <body>
-<!-- partial:index.partial.html -->
 
-  <div id="main-wrapper" class="fancy-scrollbar">
-    <div id="main">
-      <div id="content">
-        <div id="links-container"  style="padding-left: 30%; padding-right: 30%;">
-          <a href="https://calendar.google.com/calendar/u/0/r?pli=1">Calendar</a>
-          <a href="https://drive.google.com/drive/my-drive">Drive</a>
-          <a href="https://gmail.com">Gmail</a>
-          <a href="https://meet.google.com/">Google Meet</a>
-        </div>
+<div id="main-wrapper" class="fancy-scrollbar">
+  <div id="main">
+    <div id="content">
+      <div id="links-container" style="padding-left: 30%; padding-right: 30%;">
+        <a href="https://calendar.google.com/">Calendar</a>
+        <a href="https://drive.google.com/">Drive</a>
+        <a href="https://gmail.com">Gmail</a>
+        <a href="https://meet.google.com/">Google Meet</a>
+      </div>
       <div class="mycontainer" style="padding-left: 30%; padding-right: 30%; padding-top: 1%;">
         <div id="header-container">
           <div class='parent'>
@@ -1124,6 +1136,7 @@ text-align: center;
               <a href="https://github.com/" class="social-button social-button--github" aria-label="GitHub">
                 <i class="fab fa-github"></i>
               </a>
+              
             </div></div>
           </div>
           
@@ -1131,27 +1144,24 @@ text-align: center;
  
         </div>
         <a href="https://github.com/" target="_blank" style="display: inline-block;">
-          <h3 class="txt-ne" style=" margin-left: 11%; margin-bottom: 12%;" data-text="SuryaVamsi">Knowledge is power🪄 </h3>
-        </a>
+          </a>
 
 
-        <div id="search-container" style="margin-top: 5%;">
-          <div id="search-input-container">
-            <img src="https://assets.codepen.io/1468070/Google+G+Icon.png" alt="" />
-            <input type="text" placeholder="Search anything" id="search" />
+          <div id="search-container" style="margin-top: 5%;">
+            <div id="search-input-container">
+              <img src="https://assets.codepen.io/1468070/Google+G+Icon.png" alt="Google Search Icon" />
+              <input type="text" placeholder="Search anything" id="search" />
+            </div>
+          
+            <button id="image-button" onclick="googleSearch();" type="button">
+               <i class="fas fa-search"></i>
+            </button>
+          
+            <button id="mic-button" type="button">
+              <i class="fas fa-microphone"></i>
+            </button>
           </div>
-
-          <button id="image-button" onclick="googleSearch();" type="button">
-            <i class="fa-regular fa-search"></i>
-          </button>
-
-          <button id="mic-button" type="button">
-            <i class="fa-regular fa-microphone"></i>
-          </button>
-
-     
-      
-          </div>
+          
           
           
  
@@ -1207,7 +1217,7 @@ text-align: center;
         
         </a>
         
-        <a href="https://github.com/SuryaVamsi160703">
+        <a href="https://github.com/">
           <i class="fa-brands fa-github"></i>
           <div class="label">
             <span class="name">Github</span>
@@ -1230,16 +1240,14 @@ text-align: center;
   </div>
 </div>
 <!-- partial -->
-  <script>
-    function googleSearch()
-    {
-        var text=document.getElementById("search").value;
-        var cleanQuery = text.replace(" ","+",text);
-        var url='http://www.google.com/search?q='+cleanQuery;
-    
-        window.location.href=url;
+<script>
+    function googleSearch() {
+      var text = document.getElementById("search").value;
+      var cleanQuery = text.replace(" ", "+", text);
+      var url = 'https://www.google.com/search?q=' + cleanQuery;
+      window.location.href = url;
     }
-    </script>
+  </script>
   <script src='https://codepen.io/Hyperplexed/pen/xxYJYjM/54407644e24173ad6019b766443bf2a6.js'></script>
 </body>
 </html>
